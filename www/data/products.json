@@ -1,0 +1,23 @@
+[
+	{
+		"product_name": "Pågen Limpa",
+		"ranking": "3",
+		"sugar_level": "High",
+		"sugar_amount": 60,
+    "ean": "123454321"
+	},
+	{
+		"product_name": "ICA Rost",
+		"ranking": "2",
+		"sugar_level": "Medium",
+		"sugar_amount": 40,
+    "ean": "098767890"
+	},
+	{
+		"product_name": "Pågen Grovlimpa",
+		"ranking": "1",
+		"sugar_level": "Low",
+		"sugar_amount": 20,
+    "ean": "543212345"
+	}
+]

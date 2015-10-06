@@ -1,0 +1,33 @@
+<ion-content>
+  <div class="row">
+    <div class="col">
+      <h3>Welcome page </h3>
+
+      <div class="item" ng-if="error.length">
+        Error: {{error[0].description}}
+      </div>
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Search by EAN" ng-model="enteredValue">
+      </label>
+
+      <button class="button button-positive" type="button" ng-click="searchProduct(enteredValue)">Search</button>
+
+      <div class="card" ng-show="showCard">
+        <div class="item item-divider">
+          {{searchResult.length}}
+          {{searchResult.product_name}}
+        </div>
+        <div class="item item-text-wrap" style="min-height: 12rem;">
+          <h1 style="font-size: 10rem">{{searchResult.ranking}}</h1>
+        </div>
+        <div class="item item-divider">
+          {{searchResult.sugar_amount}}/100g - {{searchResult.sugar_level}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</ion-content>

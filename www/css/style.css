@@ -1,0 +1,16 @@
+/* Empty. Add your own CSS if you like */
+#product-display {
+  margin: 20% auto 0 auto;
+  width: 50%;
+
+}
+
+#product-display .title {
+  font-size: 1rem;
+  color: dimgrey;
+}
+
+#product-display .ranking {
+  font-size: 12rem;
+  color: green;
+}
