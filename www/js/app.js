@@ -46,7 +46,8 @@ foodRatingApp.config(function($ionicConfigProvider) {
         url: '/about',
         views: {
           'tab-about': {
-            templateUrl: 'views/tab-about.html'
+            templateUrl: 'views/tab-about.html',
+            controller: 'CalculatorController'
           }
         }
       })

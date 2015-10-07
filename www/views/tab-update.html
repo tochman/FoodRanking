@@ -1,15 +1,17 @@
-<ion-content>
+<ion-pane>
+  <ion-content>
 
-  <div class="row">
-    <div class="col">
-      <p>This software is under development so please check for updated versions regulary...</p>
-      <button class="button button-primary button-block " ng-click="checkForUpdates()">
-        Check for updates
-      </button>
-      <button class="button button-stable button-block button-pulse" ng-if="hasUpdate" ng-click="doUpdate()">
-        download update
-      </button>
+    <div class="row">
+      <div class="col">
+        <p>This software is under development so please check for updated versions regulary...</p>
+        <button class="button button-primary button-block " ng-click="checkForUpdates()">
+          Check for updates
+        </button>
+        <button class="button button-stable button-block button-pulse" ng-if="hasUpdate" ng-click="doUpdate()">
+          download update
+        </button>
+      </div>
     </div>
-  </div>
 
-</ion-content>
+  </ion-content>
+</ion-pane>

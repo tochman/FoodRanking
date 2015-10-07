@@ -1,5 +1,70 @@
-<ion-content>
-  <div class="row">
-    <div class="col">Just some text...</div>
-  </div>
-</ion-content>
+<ion-pane>
+  <ion-content>
+    <div class="row">
+      <div class="col">
+
+        <h3>Cooper test</h3>
+        {{person.name}}, {{person.sex}}, {{person.age}}years old with BMI: {{person.bmi}} <br/>
+
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="search" placeholder="Enter distance" ng-model="enteredValue">
+        </label>
+
+        <button class="button button-positive" type="button" ng-click="calcVO2Max(enteredValue)">Calculate
+        </button>
+        <button class="button button-positive" type="button" ng-click="openModal()">Instructions
+        </button>
+        <div ng-show="showCard">
+          vo2max: {{person.vo2Max}}
+          message: {{person.vo2MaxMessage}}
+        </div>
+
+
+      </div>
+
+    </div>
+  </ion-content>
+</ion-pane>
+
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Cooper test</h1>
+    </ion-header-bar>
+    <ion-pane>
+      <ion-content>
+        <div class="row">
+          <div class="col">
+
+            <p>Required Resources</p>
+
+            <p>To undertake this test you will require:</p>
+            <ul>
+              <li>
+                400 metre track
+              </li>
+              <li>Stopwatch</li>
+              <li>Whistle</li>
+              <li>Assistant</li>
+            </ul>
+            <p>How to conduct the test</p>
+
+            <p> This test requires the athlete to run as far as possible in 12 minutes.</p>
+            <ul>
+              <li>The athlete warms up for 10 minutes</li>
+              <li>The assistant gives the command “GO”, starts the stopwatch and the athlete commences the test</li>
+              <li>The assistant keeps the athlete informed of the remaining time at the end of each lap (400m)</li>
+              <li>The assistant blows the whistle when the 12 minutes has elapsed and records the distance the athlete
+                covered to the nearest 10 metres
+              </li>
+            </ul>
+            <button class="button button-positive" type="button" ng-click="closeModal()">Close
+            </button>
+          </div>
+
+        </div>
+      </ion-content>
+    </ion-pane>
+  </ion-modal-view>
+</script>
