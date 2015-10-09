@@ -6,15 +6,24 @@
 
           Error: {{error[0].description}}
         </div>
-        <div class="col-60">
-          <label class="item item-input">
-            <i class="icon ion-search placeholder-icon"></i>
-            <input type="number" inputmode="numeric" pattern="[0-9]*" value={{searchValue}} placeholder="Search by EAN" ng-model="searchValue">
-          </label>
+
+        <div class="list">
+
+          <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+              <i class="icon ion-search placeholder-icon"></i>
+              <input type="number" inputmode="numeric" pattern="[0-9]*" value={{searchValue}}
+                     placeholder="Search by EAN" ng-model="searchValue">
+            </label>
+            <button class="button button-small button-positive" type="button" ng-click="searchProduct(searchValue)">
+              Search
+            </button>
+          </div>
         </div>
-        <div class="col-30">
-          <button class="button button-block button-positive" type="button" ng-click="searchProduct(searchValue)">Search</button>
-          <button class="button button-block button-positive" type="button" ng-click="scanBarcode()">Scan product</button>
+
+        <div>
+          <button class="button button-block button-positive" type="button" ng-click="scanBarcode()">Scan barcode
+          </button>
         </div>
         <div class="card" ng-show="showCard">
           <div class="item item-divider">

@@ -16,7 +16,7 @@ foodRatingApp.controller("UpdateController", function($scope) {
     $scope.checkForUpdates = function() {
       $scope.log = 'Ionic Deploy: Checking for updates';
       deploy.check().then(function(hasUpdate) {
-        $scope.log ='Ionic Deploy: Update available: ' + hasUpdate;
+        $scope.log = 'Ionic Deploy: Update available.';
         $scope.hasUpdate = hasUpdate;
       }, function(err) {
         $scope.log = 'Ionic Deploy: Unable to check for updates' + err;
