@@ -1,35 +1,38 @@
-<ion-content>
-  <div class="row">
-    <div class="col">
-      <h3>Welcome page </h3>
+<ion-pane>
+  <ion-content>
+    <div class="row">
+      <div class="col">
+        <div class="item" ng-if="error.length">
 
-      <div class="item" ng-if="error.length">
-		 
-        Error: {{error[0].description}} 
+          Error: {{error[0].description}}
+        </div>
+        <div class="col-60">
+          <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="number" inputmode="numeric" pattern="[0-9]*" value={{searchValue}} placeholder="Search by EAN" ng-model="searchValue">
+          </label>
+        </div>
+        <div class="col-30">
+          <button class="button button-block button-positive" type="button" ng-click="searchProduct(searchValue)">Search</button>
+          <button class="button button-block button-positive" type="button" ng-click="scanBarcode()">Scan product</button>
+        </div>
+        <div class="card" ng-show="showCard">
+          <div class="item item-divider">
+            {{searchResult.length}}
+            {{searchResult.product_name}}
+          </div>
+          <div class="item item-text-wrap" style="min-height: 12rem;">
+            <h1 style="font-size: 10rem">{{searchResult.ranking}}</h1>
+            <small>{{message}}</small>
+          </div>
+          <div class="item item-divider">
+            {{searchResult.sugar_content_gram}}/100g
+          </div>
+        </div>
       </div>
-      <label class="item item-input">
-        <i class="icon ion-search placeholder-icon"></i>
-        <input type="search" placeholder="Search by EAN" ng-model="enteredValue">
-      </label>
-
-      <button class="button button-positive" type="button" ng-click="searchProduct(enteredValue)">Search</button>
-
-      <!--div class="card" ng-show="showCard"-->
-	  <div class="card">
-        <div class="item item-divider">
-          {{searchResult.length}}
-          {{searchResult.product_name}}
-        </div>
-        <div class="item item-text-wrap" style="min-height: 12rem;">
-          <h1 style="font-size: 10rem">{{searchResult.ranking}}</h1>
-        </div>
-        <div class="item item-divider">
-          {{searchResult.sugar_content_gram}}/100g - {{searchResult.sugar_level}}
-        </div>
-      </div>
- {{searchResult}}
     </div>
-  </div>
 
 
-</ion-content>
+  </ion-content>
+</ion-pane>
+

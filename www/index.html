@@ -4,31 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
   <title></title>
+  <!--link href="css/ionic.app.css" rel="stylesheet"-->
   <link href="lib/ionic/css/ionic.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-  <script src="lib/ionic/js/ionic.bundle.js"></script>
-  <script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
-  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
-  <!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
-  <!-- <script src="cordova.js"></script> -->
-  <script src="js/app.js"></script>
-  <script src="js/barcodeController.js"></script>
-  <script src="js/updateController.js"></script>
-  <script src="js/productsController.js"></script>
+
 </head>
 <body ng-app="foodRatingApp">
 
 <ion-pane>
   <ion-header-bar class="bar-stable bar-positive">
-    <h1 class="title">FoodRating POC</h1>
+    <h1 class="title">Love of Bread</h1>
 
-    <div class="buttons" ng-controller="BarcodeController">
+    <!--div class="buttons" ng-controller="ProductsController">
       <button class="button" ng-click="scanBarcode()">Scan product</button>
-    </div>
+    </div-->
   </ion-header-bar>
 
   <ion-nav-view></ion-nav-view>
 
 </ion-pane>
+<script src="lib/ionic/js/ionic.bundle.js"></script>
+<script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
+<script src="lib/ngCordova/dist/ng-cordova.js"></script>
+<!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
+<!-- <script src="cordova.js"></script> -->
+<script src="js/app.js"></script>
+<script src="js/updateController.js"></script>
+<script src="js/productsController.js"></script>
 </body>
 </html>

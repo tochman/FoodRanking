@@ -1,4 +1,12 @@
 {
   "name": "FoodRanking",
-  "app_id": "b82cb9dd"
+  "app_id": "b82cb9dd",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
 }
