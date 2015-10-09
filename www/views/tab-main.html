@@ -4,7 +4,8 @@
       <h3>Welcome page </h3>
 
       <div class="item" ng-if="error.length">
-        Error: {{error[0].description}}
+		 
+        Error: {{error[0].description}} 
       </div>
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
@@ -13,7 +14,8 @@
 
       <button class="button button-positive" type="button" ng-click="searchProduct(enteredValue)">Search</button>
 
-      <div class="card" ng-show="showCard">
+      <!--div class="card" ng-show="showCard"-->
+	  <div class="card">
         <div class="item item-divider">
           {{searchResult.length}}
           {{searchResult.product_name}}
@@ -22,10 +24,10 @@
           <h1 style="font-size: 10rem">{{searchResult.ranking}}</h1>
         </div>
         <div class="item item-divider">
-          {{searchResult.sugar_amount}}/100g - {{searchResult.sugar_level}}
+          {{searchResult.sugar_content_gram}}/100g - {{searchResult.sugar_level}}
         </div>
       </div>
-
+ {{searchResult}}
     </div>
   </div>
 

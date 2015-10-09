@@ -2,26 +2,20 @@ foodRatingApp.controller("ProductsController", function ($scope, $http, $filter)
   $scope.productsList = null;
   $scope.error = null;
   $scope.showCard = false;
-
-  $http.get('./data/products.json')
-    .success(function (data) {
-      $scope.productsList = data;
-    })
-    .error(function (data, status, error, config) {
-      $scope.error = [{heading: "Error", description: "Could not load json data"}];
-    });
-
-
-  $scope.searchProduct = function (name) {
-    var found = $filter('filter')($scope.productsList, {ean: name}, true);
-    if (found.length) {
-      $scope.searchResult = found[0];
-      $scope.showCard = true;
-    } else {
-      $scope.searchResult = 'Not found';
-    }
+  $scope.searchProduct = function (ean) {
+	var url = 'https://floating-river-7141.herokuapp.com/api/v1/product_listing/' + parseInt(ean);
+	//var url = 'http://localhost:9393/api/v1/product_listing/' + parseInt(ean);
+	console.log(url)
+	$scope.api_url = url;
+	$http.get(url).then(function successCallback(response) {
+		$scope.searchResult = response.data;
+		$scope.showCard = true;
+  }, function errorCallback(response) {
+   	 	$scope.error = [{heading: "Error", description: "Could not load json data"}];
+  });
+    console.log($scope.searchResult);
+  
   }
-
 
   $scope.toggleCard = function() {
     if ($scope.showCard === true) {
@@ -30,6 +24,5 @@ foodRatingApp.controller("ProductsController", function ($scope, $http, $filter)
       $scope.showCard = true;
     }
   };
-
 
 });
