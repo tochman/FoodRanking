@@ -1,7 +1,29 @@
 foodRatingApp.controller("ProductsController", function ($scope, $http, $cordovaBarcodeScanner, $ionicLoading) {
-  $scope.productsList = null;
-  $scope.error = null;
-  $scope.showCard = false;
+
+  $scope.clearElements = function () {
+    $scope.productsList = null;
+    $scope.error = null;
+    $scope.showCard = false;
+  };
+
+  $scope.show = function (message) {
+    $ionicLoading.show({
+      template: message
+    });
+  };
+  $scope.hide = function () {
+    $ionicLoading.hide();
+  };
+
+  $scope.toggleCard = function () {
+    if ($scope.showCard === true) {
+      $scope.showCard = false;
+    } else {
+      $scope.showCard = true;
+    }
+  };
+
+  $scope.clearElements();
   $scope.message = '';
   var search_ean = '';
   $scope.searchValue = search_ean;
@@ -15,22 +37,17 @@ foodRatingApp.controller("ProductsController", function ($scope, $http, $cordova
     console.log(url);
     $http.get(url).then(function successCallback(response) {
       $scope.searchResult = response.data;
-      $scope.showCard = true;
+      //Trying some javascript extensions with sugar
+      //$scope.searchResult.product_name = $scope.searchResult.product_name.titleize();
+      $scope.toggleCard();
       $scope.hide();
     }, function errorCallback(response) {
       $scope.error = [{heading: "Error", description: "Could not load json data"}];
+      $scope.hide();
+      $scope.clearElements();
     });
-    console.log($scope.searchResult);
-
   };
 
-  $scope.toggleCard = function () {
-    if ($scope.showCard === true) {
-      $scope.showCard = false;
-    } else {
-      $scope.showCard = true;
-    }
-  };
 
   $scope.scanBarcode = function () {
     $scope.show('Initiating scanner...');
@@ -48,13 +65,8 @@ foodRatingApp.controller("ProductsController", function ($scope, $http, $cordova
 
   };
 
-  $scope.show = function(message) {
-    $ionicLoading.show({
-      template: message
-    });
-  };
-  $scope.hide = function(){
-    $ionicLoading.hide();
-  };
+
+
+
 
 });
