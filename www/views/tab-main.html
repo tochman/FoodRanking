@@ -28,10 +28,11 @@
         <div class="card" ng-show="showCard">
           <div class="item item-divider">
             {{searchResult.length}}
-            {{searchResult.product_name}}
+            {{searchResult.product_name}} - {{searchResult.ranking}}
           </div>
           <div class="item item-text-wrap" style="min-height: 12rem;">
-            <h1 style="font-size: 10rem">{{searchResult.ranking}}</h1>
+            <img src="{{searchResult.image_url}}" style="height: 200px; width: auto;" />
+            <!--h1 style="font-size: 10rem">{{searchResult.ranking}}</h1-->
             <small>{{message}}</small>
           </div>
           <div class="item item-divider">

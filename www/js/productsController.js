@@ -37,8 +37,6 @@ foodRatingApp.controller("ProductsController", function ($scope, $http, $cordova
     console.log(url);
     $http.get(url).then(function successCallback(response) {
       $scope.searchResult = response.data;
-      //Trying some javascript extensions with sugar
-      //$scope.searchResult.product_name = $scope.searchResult.product_name.titleize();
       $scope.toggleCard();
       $scope.hide();
     }, function errorCallback(response) {
