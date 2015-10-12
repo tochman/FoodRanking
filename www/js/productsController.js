@@ -40,7 +40,8 @@ foodRatingApp.controller("ProductsController", function ($scope, $http, $cordova
         $scope.show('Getting data...' + result.format);
         //console.log(result.text);
         //$scope.message = result.format + result.text;
-        search_ean = result.text.slice(0,-1);
+        //search_ean = result.text.slice(0,-1);
+        search_ean = result.text;
         $scope.searchValue = search_ean;
         $scope.searchProduct(search_ean);
       });
