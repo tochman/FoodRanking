@@ -25,7 +25,11 @@ foodRatingApp.controller("UpdateController", function ($scope, $ionicLoading) {
   $scope.checkForUpdates = function () {
     $scope.show('Checking for updates');
     deploy.check().then(function (hasUpdate) {
-      $scope.show('Ionic Deploy: Update available.');
+      if (hasUpdate === true) {
+        $scope.show('Update available.');
+      } else {
+        $scope.show('Latest version installed');
+      }
       $scope.hasUpdate = hasUpdate;
     }, function (err) {
       $scope.show('Unable to check for updates' + err);
@@ -35,7 +39,8 @@ foodRatingApp.controller("UpdateController", function ($scope, $ionicLoading) {
 
   $scope.show = function (message) {
     $ionicLoading.show({
-      template: message
+      template: message,
+      duration : 1500
     });
   };
   $scope.hide = function () {
