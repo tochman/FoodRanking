@@ -30,9 +30,9 @@ foodRatingApp.controller("ProductsController", function ($scope, $http, $cordova
 
   $scope.searchProduct = function (ean) {
     $scope.show('Searching for ' + ean);
-    var url = 'https://floating-river-7141.herokuapp.com/api/v1/product_listing/' + parseInt(ean);
+    //var url = 'https://floating-river-7141.herokuapp.com/api/v1/product_listing/' + parseInt(ean);
     //var url = 'http://localhost:9393/api/v1/product_listing/' + parseInt(ean);
-    //var url = 'https://loveofbread.herokuapp.com/api/v1/product_listing/' + parseInt(ean);
+    var url = 'https://loveofbread.herokuapp.com/api/v1/product_listing/' + parseInt(ean);
 
     console.log(url);
     $http.get(url).then(function successCallback(response) {
