@@ -28,12 +28,25 @@
         <div class="card" ng-show="showCard">
           <div class="item item-divider">
             {{searchResult.length}}
-            {{searchResult.product_name}} - {{searchResult.ranking}}
+            {{searchResult.brand_name}} - {{searchResult.product_name}}
           </div>
-          <div class="item item-text-wrap" style="min-height: 12rem;">
-            <img src="{{searchResult.image_url}}" style="height: 200px; width: auto;" />
-            <!--h1 style="font-size: 10rem">{{searchResult.ranking}}</h1-->
-            <small>{{message}}</small>
+          <div class="item item-text-wrap" style="min-height: 8rem;">
+            <div class="row">
+              <div class="col col-50">
+
+                <img ng-src="{{searchResult.image_url}}" style="height: 100px; width: auto;"/>
+              </div>
+              <div class="col col-35 col-offset-15" style="text-align:center;">
+                <h1 style="font-size: 6rem">{{searchResult.ranking}}</h1>
+
+                <p>
+                  <small>Ranking</small>
+                </p>
+              </div>
+            </div>
+
+
+
           </div>
           <div class="item item-divider">
             Socker: {{searchResult.sugar_content_gram}}/100g
