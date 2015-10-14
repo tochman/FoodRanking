@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Tue Oct 13 2015 10:32:57 GMT+0200 (CEST)
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -22,21 +22,23 @@ module.exports = function(config) {
       '../www/lib/angular/angular.js',
       '../www/lib//angular-ui-router/release/angular-ui-router.js',
       '../www/lib/angular-mocks/angular-mocks.js',
+      '../www/lib/karma-read-json/karma-read-json.js',
       '../www/js/*.js',
-      'unit-tests/*.js'
+      'unit-tests/*.js',
+
+      // fixtures
+      {pattern: 'mock/*.json', included: false}
 
     ],
 
 
     // list of files to exclude
-    exclude: [
-    ],
+    exclude: [],
 
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
+    preprocessors: {},
 
 
     // test results reporter to use
@@ -64,7 +66,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS', 'Chrome'],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode

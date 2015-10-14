@@ -37,7 +37,7 @@ angular.module('foodRatingApp.controllers', [])
     //var url = 'http://localhost:9393/api/v1/product_listing/' + parseInt(ean);
     var url = 'https://loveofbread.herokuapp.com/api/v1/product_listing/' + parseInt(ean);
 
-    console.log(url);
+    //console.log(url);
     $http.get(url).then(function successCallback(response) {
       $scope.searchResult = response.data;
       $scope.toggleCard();
