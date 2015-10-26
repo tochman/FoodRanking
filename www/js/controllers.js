@@ -1,12 +1,13 @@
 angular.module('foodRatingApp.controllers', [])
 
-  .controller("ProductsController", function ($scope, $state, $http, $cordovaBarcodeScanner, $ionicLoading) {
-    $scope.showScan = true;
+  .controller("ProductsController", function ($scope, $rootScope, $http, $cordovaBarcodeScanner, $ionicLoading) {
 
     $scope.clearElements = function () {
       $scope.searchResult = null;
       $scope.error = null;
       $scope.showCard = false;
+      $rootScope.showScan = false;
+
     };
 
     $scope.show = function (message) {
@@ -26,17 +27,6 @@ angular.module('foodRatingApp.controllers', [])
         $scope.showCard = true;
       }
     };
-
-    $scope.toggleScanUi = function () {
-
-      if ($scope.showScan === true) {
-        $scope.showScan = false;
-      } else {
-        $scope.showScan = true;
-      }
-      console.log('showScan status: ' + $scope.showScan);
-      return $scope.showScan;
-    }
 
     $scope.clearElements();
     $scope.message = '';
@@ -130,4 +120,19 @@ angular.module('foodRatingApp.controllers', [])
       $ionicLoading.hide();
     };
   })
+
+.controller("NavigationController", function ($scope, $rootScope){
+  $scope.toggleScanUi = function() {
+    setTimeout(function () {
+      $scope.$apply(function () {
+          if ($rootScope.showScan === true) {
+            $rootScope.showScan = false;
+          } else {
+            $rootScope.showScan = true;
+          }
+        }
+      )
+    }, 50);
+  };
+});
 
