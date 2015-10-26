@@ -7,7 +7,7 @@
           Error: {{error[0].description}}
         </div>
 
-        <div class="list">
+        <div class="list animate-hide" ng-show="showScan">
 
           <div class="item item-input-inset">
             <label class="item-input-wrapper">
@@ -21,7 +21,7 @@
           </div>
         </div>
 
-        <div>
+        <div ng-show="showScan">
           <button class="button button-block button-positive" type="button" ng-click="scanBarcode()">Scan barcode
           </button>
         </div>
@@ -54,8 +54,6 @@
         </div>
       </div>
     </div>
-
-
   </ion-content>
 </ion-pane>
 

@@ -36,8 +36,9 @@ describe('ProductsController', function () {
       expect($scope.searchResult).toBe(null);
     });
 
-    it('should return api call', function (){
+    xit('should return api call', function (){
       httpBackend.flush();
+      $scope.searchProduct('2222');
       expect($scope.searchResult).toBe('Fiberrost');
 
     });

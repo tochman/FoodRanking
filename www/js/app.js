@@ -24,6 +24,7 @@ foodRatingApp.config(function($ionicConfigProvider) {
     });
   })
 
+
   .config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
