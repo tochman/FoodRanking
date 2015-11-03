@@ -28,17 +28,48 @@ describe('ProductsController', function () {
 
 
   describe('Products Controller', function () {
-    it('should have a $scope variable', function () {
+
+    it('should exist', function() {
+      expect(controller).toBeDefined();
+    });
+
+    it('should have a $scope', function () {
       expect($scope).toBeDefined();
     });
+
+    it('should have a #clearElements function', function () {
+      expect(typeof $scope.clearElements).toBe("function");
+    });
+
+    it('should have a #showScan status', function () {
+      expect(typeof $scope.showScan).toBe("boolean");
+    });
+
+    it('should have a #showCard status', function () {
+      expect(typeof $scope.showCard).toBe("boolean");
+    });
+
+    it('should have a #searchResult object', function () {
+      expect(typeof $scope.searchResult).toBe("object");
+    });
+
+    it('should have a #error object', function () {
+      expect(typeof $scope.error).toBe("object");
+    });
+
+
+    //@xhr = ajax.create()
+    //expect(typeof @xhr.open).toBe("function")
+
+    //toHaveBeenCalled()
 
     describe('Controller is initialized', function () {
       it('Product List is empty', function () {
         expect($scope.searchResult).toBe(null);
       });
 
-      it('showScan is set to true', function () {
-        expect($scope.showScan).toBe(true);
+      it('showScan is set to false', function () {
+        expect($scope.showScan).toBe(false);
       });
 
       it('showCard is set to false', function () {

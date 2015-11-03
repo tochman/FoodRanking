@@ -27,7 +27,7 @@ mkdir -p tests/unit-tests
 
 ```
 cd tests
-karma init unit-tests.conf.js
+karma init karma.conf.js
 ```
 
 Hit enter on every question to choose the default value, except for the following two questions.

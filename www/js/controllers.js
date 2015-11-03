@@ -7,6 +7,9 @@ angular.module('foodRatingApp.controllers', [])
       $scope.error = null;
       $scope.showCard = false;
       $rootScope.showScan = false;
+      $scope.message = '';
+      var search_ean = '';
+      $scope.searchValue = search_ean;
 
     };
 
@@ -29,9 +32,7 @@ angular.module('foodRatingApp.controllers', [])
     };
 
     $scope.clearElements();
-    $scope.message = '';
-    var search_ean = '';
-    $scope.searchValue = search_ean;
+
 
     $scope.searchProduct = function (ean) {
       $scope.show('Searching for ' + ean);
@@ -84,12 +85,12 @@ angular.module('foodRatingApp.controllers', [])
         }, function (error) {
           $scope.show('Error installing! ' + error);
         }, function (progress) {
-          $scope.log = 'Installing ' + progress;
+          $scope.log = 'Installing ' + progress+ '%';
         });
       }, function (error) {
         $scope.show('Error downloading! ' + error);
       }, function (progress) {
-        $scope.show('Downloading.. ' + progress);
+        $scope.show('Downloading.. ' + progress +'%');
       });
 
     };
