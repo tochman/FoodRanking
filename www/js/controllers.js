@@ -52,6 +52,7 @@ angular.module('foodRatingApp.controllers', [])
       //console.log(url);
       $http.get(url).then(function successCallback(response) {
         $scope.searchResult = response.data;
+        console.log('searchResult status (controller): ' + $scope.searchResult);
         $scope.toggleCard();
         $scope.hide();
       }, function errorCallback(response) {
