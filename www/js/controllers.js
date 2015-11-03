@@ -121,10 +121,11 @@ angular.module('foodRatingApp.controllers', [])
     };
   })
 
-.controller("NavigationController", function ($scope, $rootScope){
+.controller("NavigationController", function ($scope, $state, $rootScope){
   $scope.toggleScanUi = function() {
     setTimeout(function () {
       $scope.$apply(function () {
+          $state.go('tab.main');
           if ($rootScope.showScan === true) {
             $rootScope.showScan = false;
           } else {
